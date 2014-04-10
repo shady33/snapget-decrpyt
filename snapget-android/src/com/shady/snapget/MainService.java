@@ -50,9 +50,9 @@ public class MainService extends Service {
 
 				File fileList = new File(Environment
 						.getExternalStorageDirectory().getPath()
-						+ "/SnapChat/cache/");
+						+ "/Snapget/cache/");
 				fileList.mkdirs();
-				String comando = "cp -r /data/data/com.snapchat.android/cache/received_image_snaps/* /sdcard/Snapchat/cache/";
+				String comando = "cp -r /data/data/com.snapchat.android/cache/received_image_snaps/* /sdcard/Snapget/cache/";
 				try {
 					Process suProcess = Runtime.getRuntime().exec("su");
 					DataOutputStream os = new DataOutputStream(
@@ -90,14 +90,14 @@ public class MainService extends Service {
 							String currentDateandTime = sdf.format(new Date(0));
 							File to = new File(Environment
 									.getExternalStorageDirectory().getPath()
-									+ "/SnapChat/", currentDateandTime + ".jpg");
+									+ "/Snapget/", currentDateandTime + ".jpg");
 							do {
 								Random rand = new Random();
 								int n = rand.nextInt(50) + 1;
 								to = new File(Environment
 										.getExternalStorageDirectory()
 										.getPath()
-										+ "/SnapChat/", currentDateandTime + n
+										+ "/Snapget/", currentDateandTime + n
 										+ ".jpg");
 							} while (to.exists());
 							file.renameTo(to);
